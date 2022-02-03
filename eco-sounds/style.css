@@ -71,15 +71,21 @@ body {
 .icon-logo {
     width: 50px;
     height: 50px;
+    padding: 0 !important;
+    background-image: url(./assets/icons/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    fill: #bdae82;
     transition: 0.3s;
 }
 
-.icon-logo:hover {
-    fill: #FFFFFF;
+.icon-logo:hover,
+.icon-logo.active {
+    filter: invert(25%) sepia(18%) saturate(650%)  contrast(90%);
+}
+
+.icon-logo.active:hover {
+    filter: none;
 }
 
 .header-menu {
@@ -98,7 +104,19 @@ body {
 
 .nav-link {
     padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.nav-link:hover,
+.nav-link.active {
+    color: #bdae82;
+}
+
+li.nav-link.active:hover {
+    filter: invert(25%) sepia(10%) saturate(220%)  contrast(80%);
+}
+
 
 .main {
     flex: 1 1 auto;
@@ -106,6 +124,7 @@ body {
 
 .player {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 120px);
