@@ -5,6 +5,22 @@ const birdLink = document.querySelectorAll('.nav-link');
 const playPauseIcon = document.querySelector('.icon-play');
 let isPlay = false;
 
+
+/*КЭШИРУЕМ ИЗОБРАЖЕНИЯ*/
+
+window.onload = preloadImages(['./assets/img/drozd.jpg',
+                                './assets/img/javoronok.jpg',
+                                './assets/img/slavka.jpg',
+                                './assets/img/solovey.jpg',
+                                './assets/img/zaryanka.jpg'
+                                ]);
+
+function preloadImages(array) {
+    for (let i = 0; i < array.length; i++) {
+        let img = new Image();
+    }
+}
+
 /*ЗАПУСКАЕМ И ОСТАНАВЛИВАЕМ АУДИО КНОПКОЙ */
 playBtn.addEventListener('click', playAudio);
 function playAudio() {
@@ -67,3 +83,6 @@ function changeAudio(link) {
 function removeClass(collection, className) {
     collection.forEach(item => item.classList.remove(className));
 }
+
+
+
